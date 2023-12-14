@@ -6,6 +6,7 @@ import { GROUPS, ROLES } from './common/user.constants';
 
 @Injectable()
 export class UserService {
+  // in production data (users) will be fetched by making DB call here
   create(createUserDto: CreateUserDto, users: CreateUserDto[]): CreateUserDto {
     users.push({ id: users.length + 1, ...createUserDto } as CreateUserDto);
     return createUserDto;
